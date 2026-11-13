@@ -1321,7 +1321,7 @@ def main():
         raise SystemExit("ضع التوكن في BOT_TOKEN أولاً")
     
     # تشغيل خادم الويب في الخلفية لمنع توقف Render (Timed Out)
-    Thread(target=run_web).daemon = True
+    Thread(target=run_web, daemon=True).start()
 
     app = (
         Application.builder()
